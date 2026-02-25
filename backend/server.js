@@ -9,7 +9,8 @@ const app = express();
 app.use(cors({
   origin: [
     "http://127.0.0.1:5500",
-    ""https://event-registration-frontend-9q1w.onrender.com""
+    "https://event-registration-frontend-9q1w.onrender.com"
+    "https://bucolic-kleicha-004df1.netlify.app"
   ],
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
