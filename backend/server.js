@@ -6,17 +6,20 @@ require("dotenv").config();
 const app = express();
 
 // Middleware
-app.use(cors({
+pp.use(cors({
   origin: [
     "http://127.0.0.1:5500",
-    "https://event-registration-frontend-9q1w.onrender.com",
-    "https://bucolic-kleicha-004df1.netlify.app"
+    "http://localhost:5500",
+    "https://bucolic-kleicha-004df1.netlify.app",
+    "https://bucolic-kleicha-004df1.netlify.app/"
   ],
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
 }));
-app.use(express.json());
+
 app.options("*", cors());
+app.use(express.json());
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("✅ MongoDB Connected"))
