@@ -1,8 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const dns = require("dns");
 require("dotenv").config();
-
+console.log("ENV CHECK:", process.env.MONGO_URI);
+console.log("PORT CHECK:", process.env.PORT);
+dns.setServers(["8.8.8.8", "1.1.1.1"])
 const app = express();
 
 // Middleware
